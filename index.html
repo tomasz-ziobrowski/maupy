@@ -14,11 +14,18 @@
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-      .scroll-image img {
-        max-width: 100%;
-        height: auto;
-        max-height: none;
+      .scroll-container {
+        height: 90vh;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
+
+    .scroll-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
     </style>
   </head>
   <body>
@@ -41,11 +48,9 @@ slajd3
 ![](https://cdn.shopify.com/s/files/1/0051/4802/products/mona-1_large.jpg?v=1511308586)
 
 ---
-class: scroll-image
-<div class="img-wrapper">
+ <div class="scroll-container">
   <img src="http://maupy.pl/odbudowapion.jpg">
-</div>      
-
+</div>
 ---
 
 I tak dalej
