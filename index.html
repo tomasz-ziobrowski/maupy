@@ -18,6 +18,8 @@
         height: 90vh;
         overflow-y: auto;
         overflow-x: hidden;
+        /* Force browser to keep wheel here */
+        overscroll-behavior: contain;
       }
 
     .scroll-container img {
@@ -26,14 +28,18 @@
       height: auto;
       max-height: none;
     }
+      
+    .remark-slide-content {
+      overflow: hidden !important;
+      height: 100vh;
+    }
     </style>
   </head>
   <body>
     <h1>Maupy Apokalipsy</h1>
-    <h2>czyli Polska Postapo</h2>
     <textarea id="source">
 
-class: center, middle
+class: center, top
 
 # slajd1
 ---
