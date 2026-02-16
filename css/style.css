@@ -71,7 +71,7 @@ body {
   border-radius: 6px;
   position: sticky;
   top: calc(17vh + 20px);
-  min-height: 600px;
+  min-height: 696px;
   height: fit-content;
   max-height: calc(100vh - 17vh - 40px);
   overflow-y: auto;
@@ -303,6 +303,10 @@ body {
     display: none;
   }
 
+  .site-header {
+    background-position: center top;
+  }
+
   .comic {
     max-width: 100%;
     padding: 20px 20px 140px;
@@ -314,6 +318,11 @@ body {
     padding: 10px;
     margin-bottom: 60px;
     border-radius: 0;
+  }
+
+  .expand-label {
+    padding: 15px;
+    font-size: 0.95rem;
   }
 }
 
