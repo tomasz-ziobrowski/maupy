@@ -18,21 +18,142 @@ body {
                "Segoe UI", Roboto, sans-serif;
   line-height: 1.4;
   overflow-x: hidden;
+  padding-top: 0;
+}
+
+/* ===== HEADER ===== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 19vh;
+  background: url('../static/mheader.png') left top no-repeat;
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e6e6e6;
+  visibility: hidden;
+}
+
+.site-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #999;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  visibility: hidden;
+}
+
+/* ===== LAYOUT CONTAINER ===== */
+
+.layout-container {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* ===== SIDEBARS ===== */
+
+.sidebar {
+  flex: 0 0 300px;
+  padding: 20px;
+  border-radius: 6px;
+  position: sticky;
+  top: calc(17vh + 20px);
+  min-height: 600px;
+  height: fit-content;
+  max-height: calc(100vh - 17vh - 40px);
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  color: #e6e6e6;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+  visibility: hidden;
+}
+
+.sidebar-left {
+  margin-left: 20px;
+}
+
+.sidebar.sidebar-left {
+  background-image: url('../static/leftcolumn.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #1a1a1a;
+}
+
+.sidebar-right {
+  margin-right: 20px;
+}
+
+.sidebar.sidebar-right {
+  background-image: url('../static/rightcolumn.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #1a1a1a;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+.sidebar-nav li {
+  margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+  color: #999;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.sidebar-nav a:hover {
+  color: #e6e6e6;
+}
+
+.sidebar-content p {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  visibility: hidden;
 }
 
 /* ===== MAIN ===== */
 
 .comic {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 0 140px;
+  flex: 1;
+  max-width: 900px;
+  margin: 0;
+  padding: 200px 0 140px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== ARTICLE / PANEL ===== */
 
 .panel {
-  width: 50%;
-  margin: 0 auto 90px;
+  width: 100%;
+  margin: 0 0 90px;
   background: #333;
   padding: 14px;
   border-radius: 6px;
@@ -40,10 +161,6 @@ body {
   box-shadow:
     0 0 0 1px #3a3a3a,
     0 18px 50px rgba(0,0,0,.55);
-}
-
-.panel:nth-of-type(even) {
-  width: 46%;
 }
 
 /* ===== HEADER (TITLE + DATE) ===== */
@@ -54,7 +171,7 @@ body {
 
 .panel-title {
   margin: 0 0 4px;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   font-weight: 600;
   color: #e5e5e5;
   letter-spacing: .2px;
@@ -177,9 +294,18 @@ body {
 
 /* ===== MOBILE ===== */
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
   .comic {
-    padding: 60px 0 140px;
+    max-width: 100%;
+    padding: 20px 20px 140px;
   }
 
   .panel,
